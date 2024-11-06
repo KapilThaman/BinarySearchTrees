@@ -55,7 +55,24 @@ class BinarySearchTree{
                 }
             }
             return false;
-        } 
+        }
+        
+        BFS(){
+            let currentNode = this.root;
+            let Arr1 = [];
+            let result = [];
+
+            Arr1.push(currentNode);
+
+            while(Arr1.length){
+                currentNode = Arr1.shift();
+                result.push(currentNode.value);
+                if(currentNode.left) Arr1.push(currentNode.left);
+                if(currentNode.right) Arr1.push(currentNode.right);
+
+            }
+        }
+
 }
 
 let myTree = new BinarySearchTree();
